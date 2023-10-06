@@ -1,0 +1,32 @@
+{
+    "name": "get-jwks-ts-issue",
+    "version": "1.0.0",
+    "type": "module",
+    "private": true,
+    "description": "get-jwks package TS compilation issue demonstration",
+    "main": "dist/index.js",
+    "exports": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+    },
+    "types": "dist/index.d.ts",
+    "packageManager": "pnpm@8.8.0",
+    "engines": {
+        "node": ">=20",
+        "pnpm": ">=8"
+    },
+    "scripts": {
+        "setdev": "corepack enable && corepack prepare $npm_package_packageManager --activate && pnpm install --frozen-lockfile",
+        "build": "tsc -p tsconfig.json",
+        "start": "pnpm build && node dist/index.js"
+    },
+    "devDependencies": {
+        "@types/node": "^20.8.2",
+        "fastify-tsconfig": "^2.0.0",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "get-jwks": "^8.3.1"
+    }
+}
